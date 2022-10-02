@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommentService } from './comment.service';
 
 @Component({
@@ -12,6 +12,8 @@ export class CommentComponent {
   private commentPrintTypeValue!: CommentPrintType;
   private contentValue!: string;
   private splitPositionValues!: number[];
+
+  constructor(private commentService: CommentService) { }
 
   @Input()
   get commentPrintType(): CommentPrintType {
@@ -40,11 +42,10 @@ export class CommentComponent {
     setTimeout(() => this.createComment());
   }
 
-  constructor(private elementRef: ElementRef) { }
   private createComment() {
     if(!this.isAlreadySet && navigator.userAgent.indexOf("Chrome") > -1){
       var comments : string[] = [];
-      new CommentService().handleComments(comments, this.content, this.commentPrintType, this.splitPositions)
+      this.commentService.handleComments(comments, this.content, this.commentPrintType, this.splitPositions)
 
       comments.reverse();
       comments.forEach(comment => {
