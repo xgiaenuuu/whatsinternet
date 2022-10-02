@@ -1,12 +1,10 @@
 import * as express from 'express';
-import User from '../interfaces/user.interface';
 import Controller from './_base.controller';
-import { UserModel } from '../domain/user.model';
+import User from '../domain/user.model';
  
 export default class UserController implements Controller {
   public path = '/users';
   public router = express.Router();
-  private userModel = UserModel;
  
   constructor() {
     this.intializeRoutes();
@@ -19,12 +17,12 @@ export default class UserController implements Controller {
   }
  
   getAllUsers = (request: express.Request, response: express.Response) => {
-    let users = UserModel.findAll();
+    let users = User.findAll();
     response.send(users);
   }
 
   getUserById = (request: express.Request, response: express.Response) => {
-    let user = UserModel.findByPk(request.params.version);
+    let user = User.findByPk(request.params.version);
     response.send(user);
   }
  
@@ -32,8 +30,7 @@ export default class UserController implements Controller {
     const user: User = request.body;
 
     response.send(
-        UserModel.create({
-            id: user.id,
+        User.create({
             username: user.username,
             email: user.email,
             password: user.password

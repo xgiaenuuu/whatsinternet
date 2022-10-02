@@ -1,7 +1,7 @@
 import { Model, InferAttributes, InferCreationAttributes, CreationOptional, DataTypes } from 'sequelize';
 import { sequelize } from './_dbconfig';
 
-export class UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {
+class UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {
   declare id: CreationOptional<number>;
   declare username: string;
   declare email: string;
@@ -11,7 +11,7 @@ export class UserModel extends Model<InferAttributes<UserModel>, InferCreationAt
 UserModel.init(
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
@@ -29,7 +29,9 @@ UserModel.init(
     },
   },
   {
+    sequelize,
     tableName: 'users',
-    sequelize
   }
 );
+
+export default UserModel

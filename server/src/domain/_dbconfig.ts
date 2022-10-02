@@ -1,8 +1,7 @@
 import { Sequelize } from 'sequelize';
- 
-export const sequelize: Sequelize = new Sequelize("test-db", "user", "pass", {
-  dialect: "sqlite",
-  host: "./dev.sqlite"
+require('dotenv').config();
+
+export const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: process.env.DB,
 });
- 
-module.exports = sequelize;

@@ -1,6 +1,7 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import Controller from './controllers/_base.controller';
+import User from './domain/user.model';
  
 class App {
   public app: express.Application;
