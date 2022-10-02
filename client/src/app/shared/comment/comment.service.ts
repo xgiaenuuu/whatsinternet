@@ -8,7 +8,8 @@ export class CommentService {
 
   constructor() { }
 
-  public handleComments(comments : string[], content : string, commentPrintType : CommentPrintType, splitPositions : number[]){
+  public handleComments(content : string, commentPrintType : CommentPrintType, splitPositions : number[]): string[]{
+    var comments : string[] = [];
     switch(commentPrintType){
       case CommentPrintType.ALL:
         var commentLines = content.split('\n');
@@ -28,6 +29,8 @@ export class CommentService {
         comments.pop(); //remove last
         break;
     }
+
+    return comments;
   }
 
   private SplitCommentAtSpecificPosition(commentLines : string[], comments : string[], splitPositions : number[]){

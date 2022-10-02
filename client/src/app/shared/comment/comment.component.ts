@@ -44,8 +44,7 @@ export class CommentComponent {
 
   private createComment() {
     if(!this.isAlreadySet && navigator.userAgent.indexOf("Chrome") > -1){
-      var comments : string[] = [];
-      this.commentService.handleComments(comments, this.content, this.commentPrintType, this.splitPositions)
+      var comments : string[] = this.commentService.handleComments(this.content, this.commentPrintType, this.splitPositions);
 
       comments.reverse();
       comments.forEach(comment => {
