@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackgroundColor } from 'src/app/shared/enums';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  public backgroundColor = BackgroundColor;
 
   constructor() { }
 

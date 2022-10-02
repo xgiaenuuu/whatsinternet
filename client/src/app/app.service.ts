@@ -9,6 +9,6 @@ export class AppService {
 
   public setBodyClasses(){
     const body = document.getElementById('body');
-    body!.className = "bg-white dark:bg-gray-800";
+    body!.className = "bg-gray-100 dark:bg-gray-800";
   }
 }

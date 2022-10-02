@@ -1,1 +1,14 @@
-<p>login works!</p>
+<form action="" class="bg-white dark:bg-gray-900 text-black dark:text-white mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+  <p class="text-lg font-medium mb-5">Login to your account</p>
+
+  <app-input id="email" label="Email" placeholder="Enter Email" type="email"></app-input>
+
+  <app-input class="" id="password" label="Password" placeholder="Enter Password" type="password" [showPasswordButton]="true"></app-input>
+
+  <app-button class="block" type="submit" text="Login" [backgroundColor]="backgroundColor.INDIGO_600"></app-button>
+
+  <p class="text-center text-sm text-gray-500">
+    No account?
+    <a class="underline" routerLink="/auth/register">Sign up</a>
+  </p>
+</form>
