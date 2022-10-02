@@ -4,7 +4,7 @@ import { helloWorldComment } from 'src/assets/utf-styles/hello_world';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   public commentType = CommentType;
