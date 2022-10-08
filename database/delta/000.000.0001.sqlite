@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS user (
-  c1 INT,
-  c2 VARCHAR(10)
-);
