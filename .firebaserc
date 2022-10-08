@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "whatsinter-net"
+  },
+  "targets": {
+    "whatsinter-net": {
+      "hosting": {
+        "whatsinternet": [
+          "whatsinter-net"
+        ]
+      }
+    }
+  }
+}

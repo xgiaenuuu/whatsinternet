@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "whatsinternet:build:production",
+            "firebaseProject": "whatsinter-net",
+            "firebaseHostingSite": "whatsinter-net"
+          }
         }
       }
     }
